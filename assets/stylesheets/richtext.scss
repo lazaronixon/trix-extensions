@@ -1,0 +1,89 @@
+trix-toolbar {
+  .trix-button--icon-horizontal-rule::before { background-image: image-url("trix_horizontal_rule.svg"); }
+  .trix-button--icon-color::before { background-image: image-url("trix_color.svg"); }
+
+  .trix-dialog--heading { max-width: 180px; }
+
+  .trix-dialog--color {
+    max-width: 265px;
+
+    .trix-dialog__link-fields { flex-direction: column; }
+    .trix-button-group {
+      margin: 1px;
+
+      button {
+        width: 28px;
+        &:after { content: "Ab"; }
+        &.trix-active::after { content: "✓"; }
+      }
+
+      [data-trix-attribute=fgColor1] { color: rgb(136, 118, 38) }
+      [data-trix-attribute=fgColor2] { color: rgb(136, 118, 38) }
+      [data-trix-attribute=fgColor3] { color: rgb(207, 0, 0) }
+      [data-trix-attribute=fgColor4] { color: rgb(216, 28, 170) }
+      [data-trix-attribute=fgColor5] { color: rgb(144, 19, 254) }
+      [data-trix-attribute=fgColor6] { color: rgb(5, 98, 185) }
+      [data-trix-attribute=fgColor7] { color: rgb(17, 138, 15) }
+      [data-trix-attribute=fgColor8] { color: rgb(148, 82, 22) }
+      [data-trix-attribute=fgColor9] { color: rgb(102, 102, 102) }
+
+      [data-trix-attribute=bgColor1] { background-color: rgb(250, 247, 133) }
+      [data-trix-attribute=bgColor2] { background-color: rgb(255, 240, 219) }
+      [data-trix-attribute=bgColor3] { background-color: rgb(255, 229, 229) }
+      [data-trix-attribute=bgColor4] { background-color: rgb(255, 228, 247) }
+      [data-trix-attribute=bgColor5] { background-color: rgb(242, 237, 255) }
+      [data-trix-attribute=bgColor6] { background-color: rgb(225, 239, 252) }
+      [data-trix-attribute=bgColor7] { background-color: rgb(228, 248, 226) }
+      [data-trix-attribute=bgColor8] { background-color: rgb(238, 226, 215) }
+      [data-trix-attribute=bgColor9] { background-color: rgb(242, 242, 242) }
+    }
+  }
+
+  .trix-dialog {
+    padding: 5px;
+    .trix-dialog-hidden__input {
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+    }
+  }
+}
+
+trix-editor {
+  [data-trix-mutable] {
+    &.attachment {
+      &[data-trix-content-type~="vnd.rubyonrails.horizontal-rule.html"] {
+        box-shadow: 0 0 0 2px highlight;
+      }
+    }
+  }
+}
+
+.trix-content {
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  h1 { font-size: 36px; }
+  h2 { font-size: 26px; }
+  h3 { font-size: 18px; }
+  h4 { font-size: 18px; }
+  h5 { font-size: 14px; }
+  h6 { font-size: 12px; }
+
+  .attachment { width: 100%; }
+
+  .attachment--content.attachment--horizontal-rule,
+  .attachment--content[data-trix-content-type~='vnd.rubyonrails.horizontal-rule.html'] {
+    padding: 1.5em 0 0.5em !important;
+    margin-bottom: 0.5em
+  }
+
+  .attachment--content.attachment--horizontal-rule hr,
+  .attachment--content[data-trix-content-type~='vnd.rubyonrails.horizontal-rule.html'] hr {
+    margin: 0;
+    width: 20%;
+    border-color: currentColor
+  }
+}
