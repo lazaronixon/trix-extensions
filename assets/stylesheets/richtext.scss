@@ -2,7 +2,7 @@ trix-toolbar {
   .trix-button--icon-horizontal-rule::before { background-image: image-url("trix_horizontal_rule.svg"); }
   .trix-button--icon-color::before { background-image: image-url("trix_color.svg"); }
 
-  .trix-dialog--heading { max-width: 180px; }
+  .trix-dialog--heading { max-width: 160px; }
 
   .trix-dialog--color {
     max-width: 265px;
