@@ -8,6 +8,7 @@ trix-toolbar {
     max-width: 265px;
 
     .trix-dialog__link-fields { flex-direction: column; }
+
     .trix-button-group {
       margin: 1px;
 
@@ -41,6 +42,7 @@ trix-toolbar {
 
   .trix-dialog {
     padding: 5px;
+
     .trix-dialog-hidden__input {
       position: absolute;
       z-index: -1;
@@ -50,12 +52,8 @@ trix-toolbar {
 }
 
 trix-editor {
-  [data-trix-mutable] {
-    &.attachment {
-      &[data-trix-content-type~="vnd.rubyonrails.horizontal-rule.html"] {
-        box-shadow: 0 0 0 2px highlight;
-      }
-    }
+  [data-trix-mutable].attachment[data-trix-content-type~="vnd.rubyonrails.horizontal-rule.html"] {
+    box-shadow: 0 0 0 2px highlight;
   }
 }
 
